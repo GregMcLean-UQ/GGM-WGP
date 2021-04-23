@@ -2,15 +2,26 @@
 //
 
 #include <iostream>
+#include <string.h>
 #include "maize.cpp"
+#include "InputReader.cpp"
+
+using namespace std;
 
 int main()
 {
 
     double env_paras[14];
     double genetic_paras[20];
-    double weather[366 * 4];
+    double weather[366 * 5];
     double out_end[10];
+
+    string filename = ".\\Data\\metEnv1.csv";
+    filename =  "C:\\Temp\\metEnv1.csv";
+
+    // Read met data into weather.
+    ReadMet(filename, weather);
+    GetGeneticParas(genetic_paras);
 
     maizeGrainYieldModel(weather, env_paras, genetic_paras, out_end);
 }
