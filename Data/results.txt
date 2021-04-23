@@ -1,0 +1,21 @@
+[0]:73.752321550832093
+[1]:0
+[2]:3.2300193763524003e-317
+[3]:3.9525251667299724e-323
+[4]:140
+[5]:0
+[6]:0
+[7]:0.001
+[8]:0.49268656716417908
+[9]:0
+
+out_end[0] = veg_mass;
+      out_end[1] = seed_mass;
+      out_end[2] = gdu_silk;
+      out_end[3] = gdu_shd;
+      out_end[4] = count_daily;
+      out_end[5] = silk_num_total_all;
+      out_end[6] = embryo_num_total;
+      out_end[7] = hi;
+      out_end[8] = maxHIa;
+      out_end[9] = lai_fl;

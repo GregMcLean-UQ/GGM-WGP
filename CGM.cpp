@@ -7,6 +7,8 @@
 #include "InputReader.cpp"
 
 using namespace std;
+#include <chrono>
+using namespace std::chrono;
 
 int main()
 {
@@ -21,9 +23,17 @@ int main()
 
     // Read met data into weather.
     ReadMet(filename, weather);
-    GetGeneticParas(genetic_paras);
+    GetGeneticParams(genetic_paras);
+    GetEnvironParams(env_paras);
 
+    auto start = high_resolution_clock::now();
     maizeGrainYieldModel(weather, env_paras, genetic_paras, out_end);
+    auto stop = high_resolution_clock::now();
+    auto duration = duration_cast<microseconds>(stop - start);
+
+    cout << duration.count() << endl;
+
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
