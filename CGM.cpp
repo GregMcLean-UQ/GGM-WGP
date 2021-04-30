@@ -22,7 +22,8 @@ int main()
     double weather[nDays * 5];
     double out_end[10];
 
-    string filename =  "C:\\Users\\uqgmclea\\OneDrive - The University of Queensland\\CGM-WGP\\Programs\\Code\\Data\\metEnv1.csv";
+//    string filename =  "C:\\Users\\uqgmclea\\OneDrive - The University of Queensland\\CGM-WGP\\Programs\\Code\\Data\\metEnv1.csv";
+    string filename =  "Data\\metEnv1.csv";
    
     // Read met data into weather.
     ReadMet(filename, weather,nDays);
@@ -35,7 +36,12 @@ int main()
     auto duration = duration_cast<microseconds>(stop - start);
 
     cout << duration.count() << endl;
-
+    for(int i=0;i<10;i++)
+    {
+       printf("%5.2f, ",out_end[i]);
+    }
+    printf("\n");
+    
 
 }
 
