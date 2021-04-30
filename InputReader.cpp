@@ -2,10 +2,11 @@
 #include <fstream>
 #include <string>
 #include <stdio.h>
-
+#include <vector>
+#include <sstream>
 using namespace std;
 
-int ReadMet(string filename, double *weather)
+int ReadMet(string filename, double *weather, int nDays)
 {
     ifstream file(filename);
     string str;
@@ -18,17 +19,19 @@ int ReadMet(string filename, double *weather)
     {
         /* get the first token */
       
-
-       const char* ptr = str.c_str();
+        int col = 0;
+        const char* ptr = str.c_str();
         token = strtok((char *)ptr, s);
 
         /* walk through other tokens */
         while (token != NULL)
         {
             val = stod(token);
-            weather[indx++] = val;
+            weather[indx + col * nDays] = val;
             token = strtok(NULL, s);
+            col++;
         }
+        indx++;
     }
 
     return 0;
@@ -61,7 +64,7 @@ void GetGeneticParams(double *genetic_paras)
 void     GetEnvironParams(double *env_paras)
 {
     // ENV1     
-    env_paras[0] = 366;          // num_days_year (nrow weather),
+    env_paras[0] = 240;          // num_days_year (nrow weather),
     env_paras[1] = 42.79374482;  // latitute
     env_paras[2] = 125;          //planting date,
     env_paras[3] = 8.14;         // ppop

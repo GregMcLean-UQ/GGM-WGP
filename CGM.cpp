@@ -1,8 +1,10 @@
 // CGM.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
-#include <iostream>
 #include <string.h>
+#include <iostream>
+#include <stdio.h>
+
 #include "maize.cpp"
 #include "InputReader.cpp"
 
@@ -10,19 +12,20 @@ using namespace std;
 #include <chrono>
 using namespace std::chrono;
 
+
 int main()
 {
 
     double env_paras[14];
     double genetic_paras[20];
-    double weather[366 * 5];
+    int nDays = 240;
+    double weather[nDays * 5];
     double out_end[10];
 
-    string filename = ".\\Data\\metEnv1.csv";
-    filename =  "C:\\Temp\\metEnv1.csv";
-
+    string filename =  "C:\\Users\\uqgmclea\\OneDrive - The University of Queensland\\CGM-WGP\\Programs\\Code\\Data\\metEnv1.csv";
+   
     // Read met data into weather.
-    ReadMet(filename, weather);
+    ReadMet(filename, weather,nDays);
     GetGeneticParams(genetic_paras);
     GetEnvironParams(env_paras);
 
