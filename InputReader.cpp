@@ -59,6 +59,7 @@ void GetGeneticParams(double *genetic_paras)
     genetic_paras[17] = 0.67;   //sdv (swdf_veg) = supl. demand water deficit fact: sensitivity at veg state ([0,1] 0.67)
     genetic_paras[18] = 0.67;   //sds (swdf_sens) = supl. demand water deficit fact: sensitivity at senescent state ([0,1] 0.67)
     genetic_paras[19] = 60.0;   //sid (silkInidd) = number of silks initiated daily (60)
+    genetic_paras[20] = 1300.0;   //gfd (tbrep) = // Thermal time duration grain fill (tbrep) Muchow & Sinclair
 }
 
 void     GetEnvironParams(double *env_paras)

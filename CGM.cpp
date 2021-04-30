@@ -23,7 +23,7 @@ int main()
     double out_end[10];
 
 //    string filename =  "C:\\Users\\uqgmclea\\OneDrive - The University of Queensland\\CGM-WGP\\Programs\\Code\\Data\\metEnv1.csv";
-    string filename =  "Data\\metEnv1.csv";
+    string filename =  "Data//metEnv1.csv";
    
     // Read met data into weather.
     ReadMet(filename, weather,nDays);
